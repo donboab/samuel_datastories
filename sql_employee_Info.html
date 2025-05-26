@@ -32,8 +32,7 @@
 			SELECT CONVERT(DATE, GETDATE()) AS [Current Date];
 
 			--OR
-			SELECT YEAR(GETDATE()); 
-			SELECT DATEPART(YY, GETDATE()); -- To get only current year
+			SELECT YEAR(GETDATE()); -- To get only current year
 			SELECT MONTH(GETDATE()); -- To get only the current month
 			SELECT DAY(GETDATE()); -- To get only the current day
 
@@ -74,14 +73,6 @@
 
 	--8		Write a query to find the names of employees that begin with ‘S’
 
-			WITH cte AS
-			(SELECT CONCAT(EmpFname, ' ', EmpLname) AS Full_name
-			FROM Employee_Info)
-			SELECT Full_name
-			FROM cte
-			WHERE Full_name like 'S%';
-
-			-- or without cte:
 			SELECT CONCAT(EmpFname, ' ', EmpLname) AS Full_name
 			FROM Employee_Info
 			WHERE EmpFname like 'S%';
@@ -118,9 +109,6 @@
 			        COALESCE(EmpFname, '') + ' ' + COALESCE(EmpLname, '')
 			    )) AS FullName
 			FROM Employee_Info;
-
-			--SELECT CONCAT_WS(' ', EmpFname, EmpLname) AS FullName
-			--FROM Employee_Info;
 
 
 	--11	 Write a query find number of employees whose DOB is between 
