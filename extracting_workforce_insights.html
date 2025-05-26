@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<html>
+	<head>
+		<title>Extracting Workforce Insights</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="./assets/css/portfolio.css">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a class="logo">Extracting Workforce Insights</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li class="active"><a >Extracting Workforce Insights</a></li>
+							<li><a href="#footer">Contact</a></li>
+						</ul>
+						<!-- <ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul> -->
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<!-- <span class="date">April 25, 2017</span> -->
+									<h1>Extracting Workforce Insights</h1>
+									<p>SQL Queries to Populate Details on Different Departments From Employee Tables to Answer Questions</p>
+								</header>
+								<!-- <div class="image main"><img src="images/employee_dataset.png" alt="" /></div> -->
+								<iframe src="./sql_db_request.html" width="100%" height="500px" style="border:none;"></iframe>
+								<p><em style="color: #8b949e;">Note: You can scroll through my SQL code above or view it on my Github via the link below.</em></p>
+								<hr>
+								<p><strong>SQL Code:</strong> <span><a href="https://github.com/donboab/samuel.portfolio/blob/main/assets/projects/employee_database.sql" target="_blank" rel="noopener noreferrer">Extracting Workforce Insights SQL Code</a></span></p>
+								<h3>SQL Skills Used:</h3>
+								<p>
+									<ul>
+										<li><strong>Data Retrieval (SELECT statements): </strong>Extracting specific columns and rows based on conditions.</li>
+										<li><strong>Filtering Data (WHERE clause): </strong>Using conditional logic to retrieve relevant records (e.g., by city, salary range, manager ID).
+										</li>
+										<li><strong>Joining Tables: </strong>LEFT JOIN: To combine data from Employee_Details and Employee_Salary based on matching EmpID.
+										<br>
+										FULL JOIN: To capture all records from both tables, including unmatched entries.
+										</li>
+										<li><strong>Aggregation Functions: </strong>COUNT(): For counting records (e.g., number of employees in a project).
+										<br>
+										MAX(), MIN(), AVG(): For calculating salary statistics.</li>
+										<li><strong>Grouping Data (GROUP BY): </strong>Summarizing data by employee to compute total compensation.
+										</li>
+										<li><strong>Pattern Matching (LIKE operator): </strong>Using wildcards to find names with specific character patterns.
+										</li>
+										<li><strong>Set-Based Operations: </strong>Applying conditions like NOT IN to exclude specific project types.
+										</li>
+										<li><strong>Mathematical Operations: </strong>Performing arithmetic (e.g., adding base salary and variable pay).
+										</li>
+										<li><strong>Range Filtering (BETWEEN): </strong>Extracting salary values within a defined range.
+										</li>
+										<li><strong>Use of DISTINCT (if implied in unique project extraction): </strong>Returning unique project names.
+										</li>										
+									</ul>
+								</p>
+								<h3>Project Description</h3>
+								<p>This project centers on the analysis of employee data stored across two interconnected tables(Employee_Details and Employee_Salary) with the objective of deriving valuable operational and HR insights using SQL. Through structured queries, the project demonstrates key database concepts such as filtering, joining, aggregation, and pattern matching to support strategic decision-making. The project objectives includes:
+									<p><strong>Data Exploration & Understanding:</strong></p>
+									<p>Analyze employee demographic, and salary data using structured SQL queries.</p>
+									<p><strong>Operational Insight Generation:</strong></p>
+									<p>Provide clarity on team structures, salary trends, and project distributions to inform business decisions.</p>
+									<p><strong>Cross-Table Analysis:</strong></p>
+									<p>Integrate data from multiple tables to support comprehensive reporting on employee status and compensation.</p>
+									<p><strong>Key Analytical Use Cases and Insights Delivered:</strong></p>
+									
+									<ul>
+										<li><strong>Managerial Oversight: </strong>Identified employees reporting to specific managers.</li>
+										<li><strong>Project Allocation Overview: </strong>Extracted unique project codes to understand resource distribution.</li>
+										<li><strong>Team Size Analysis: </strong>Counted employees assigned to key projects such as ‘P1’.</li>
+										<li><strong>Compensation Review: 
+										</strong>Calculated minimum, maximum, and average salary across the organization.</li>
+										<li><strong>Targeted Pay Band Reporting: 
+										</strong>Isolated employees earning within a specified salary range (£9,000–£15,000).</li>
+										<li><strong>Location-Based Filtering: </strong> Retrieved employees based on combined geographic and managerial criteria.</li>
+										<li><strong>Flexible Query Logic: 
+										</strong>Applied compound filtering using OR to support broader employee searches.</li>
+										<li><strong>Exclusion Queries: 
+										</strong>Listed employees involved in all projects except ‘P1’.</li>
+										<li><strong>Total Earnings Calculation: 
+										</strong>Computed complete salary packages by summing base salary with variable components.</li>
+										<li><strong>Name Pattern Matching: 
+										</strong>Found employees using advanced search logic with wildcards (e.g., names containing “hn”).</li>
+										<li><strong>Data Merging & Reconciliation: 
+										</strong>Used joins to assess completeness and overlap between employee records across tables.</li>
+										
+									</ul>
+									
+									<h3>Impact of the Project</h3>
+									<p>By completing this SQL project, a fully operational query-based analysis framework was developed to enable rapid, flexible querying of employee data. The insights generated support stakeholders (including HR managers, project leads, and finance teams) in making data-informed decisions regarding team composition, project staffing, salary distribution, and workforce planning.
+									<br>
+									This project showcases the practical application of SQL for real-world business analysis and underlines the importance of relational data modeling, query optimization, and analytical thinking in a corporate context.</p>
+								</p>
+								<h3>Technology used:</h3>
+								 <p>SQL Server Management Studio (SSMS) for querying and analysis</p>
+								 <p>T-SQL (Transact-SQL)</p>
+								
+								<p><strong>View SQL File:</strong><a href="https://github.com/donboab/samuel.portfolio/blob/main/assets/projects/employee_database.sql" target="_blank" rel="noopener noreferrer"> Click to View Queries</a></p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#" id="myForm">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" required />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" required/>
+									</div>
+									<div class="form-group field">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" name="subject"
+                                          class="form-control"
+                                          id="subject"
+                                          required />
+                                    </div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3" required></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li class="contact-btn"><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<!-- <section class="alt">
+								<h3>Address</h3>
+								<p>Dundee, Scotland<br />
+								United Kingdom</p>
+							</section> -->
+							<section>
+								<h3>Phone</h3>
+								<p><a href="tel:+447780186491">+447780186491</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:samuelolowo360@gmail.com">samuelolowo360@gmail.com</a></p>
+							</section>
+							<!-- <section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section> -->
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<span>&copy; Samuel Olowo</span> 
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+
+		<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+		</script>
+
+	<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "98q6NFqk7-mAFw9gs",
+      });
+   })();
+</script>
+
+    <script>
+         // listen to the form submission
+      document.querySelector("#myForm").addEventListener("submit", function (event) {
+          event.preventDefault();
+           // send the email here
+        emailjs.sendForm("service_2kfmf2j", "template_zs8sfab", this).then(
+            (response) => {
+              console.log("SUCCESS!", response.status, response.text);
+              alert("SUCCESS! Message Sent");
+            document.querySelector("#myForm").reset();
+            },
+            (error) => {
+              console.log("FAILED...", error);
+              alert("Message Not Sent! Please, call or email me directly.", error);
+            }
+          );
+        });
+    </script>
+	</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<html>
+	<head>
+		<title>Workplace Safety</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="./assets/css/portfolio.css">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a class="logo">Workplace Safety</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li class="active"><a >Workplace Safety</a></li>
+							<li><a href="#footer">Contact</a></li>
+						</ul>
+						<!-- <ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul> -->
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<!-- <span class="date">April 25, 2017</span> -->
+									<h1>Workplace Safety</h1>
+									<p>SQL Queries to Populate Details on Different Incidents From Workplace Safety Database to Answer Questions</p>
+								</header>
+								<!-- <div class="image main"><img src="images/workplace_safety.png" alt="" /></div> -->
+								<iframe src="./sql_workplace.html" width="100%" height="500px" style="border:none;"></iframe>
+								<p><em style="color: #8b949e;">Note: You can scroll through my SQL code above or view it on my Github via the link below.</em></p>
+								<hr>
+								<p><strong>SQL Code:</strong> <span><a href="https://github.com/donboab/samuel.portfolio/blob/main/assets/projects/SafetyData.sql" target="_blank" rel="noopener noreferrer">Workplace Safety SQL Code</a></span></p>
+								<h3>SQL Skills Used:</h3>
+								<p>
+									<ul>
+										<li><strong>Data Aggregation:</strong> These was used for summarizing incident. Example like: COUNT(), SUM(), AVG(), ROUND(); counts, total costs, and average values across categories
+										</li>
+										<li><strong>Grouping and Categorization:</strong> GROUP BY was used for breaking down incidents by department, plant, shift, and more
+										</li>
+										<li><strong>Filtering Data:</strong> WHERE clauses was used to isolate specific incident types, report types, or date ranges. Example: Filtering for "Lost Time", "Vehicle" incidents, or days lost > 2
+										</li>
+										<li><strong>Sorting and Ranking:</strong> ORDER BY was used with DESC/ASC to prioritize high-impact areas (e.g., top departments or incident types)
+										</li>
+										<li><strong>Limiting Results:</strong> TOP (n) was used to retrieve highest or lowest ranking items (e.g., most affected age group, top 5 plants)
+										</li>
+										<li><strong>Date and Time Functions:</strong> YEAR(), MONTH(), FORMAT(), DATEPART() were used to extract and organize data by time dimensions (e.g., incidents by month or year)
+										</li>
+										<li><strong>Common Table Expressions (CTEs):</strong> Was used to simplify complex queries, such as month name extraction for ranking incident frequency
+										</li>
+										<li><strong>Descriptive Analytics:</strong> Writing diagnostic and exploratory queries to uncover trends, patterns, and root causes
+										</li>
+										<li><strong>Data Validation & Cleaning:</strong> Ensuring correct data types and consistent formatting for reliable analysis (implicit skill in query design)
+										</li>
+									</ul>
+								</p>
+								<h3>Project Description</h3>
+								<p>This project involved the exploration and analysis of a workplace safety dataset comprising detailed incident records across multiple operational plants. The goal was to leverage SQL to extract actionable insights that inform health and safety decision-making, operational improvements, and risk mitigation strategies. The analytical focus areas are:
+									<p><strong>Cost Impact Assessment:</strong></p>
+									
+									<ul>
+										<li>Yearly trends in safety-related expenditure</li>
+										<li>Identification of high-cost incident types (e.g., 'Vehicle' incidents)</li>
+										<li>Total and average incident costs by injury location, report type, and department</li>
+									</ul>
+									
+									<p><strong>Severity and Duration Metrics:</p></strong>
+									<ul>
+										<li>Days lost per incident type and department</li>
+										<li>Average days lost by incident category</li>
+										<li>Filtering departments with recurring incidents exceeding 2-day loss</li>
+									</ul>
+								</p>
+								<h3>Technology used:</h3>
+								 <p>SQL Server Management Studio (SSMS) for querying and analysis</p>
+								
+								<p><strong>View SQL File:</strong><a href="https://github.com/donboab/samuel.portfolio/blob/main/assets/projects/SafetyData.sql" target="_blank" rel="noopener noreferrer"> Click to View Queries</a></p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#" id="myForm">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" required />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" required/>
+									</div>
+									<div class="form-group field">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" name="subject"
+                                          class="form-control"
+                                          id="subject"
+                                          required />
+                                    </div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3" required></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li class="contact-btn"><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<!-- <section class="alt">
+								<h3>Address</h3>
+								<p>Dundee, Scotland<br />
+								United Kingdom</p>
+							</section> -->
+							<section>
+								<h3>Phone</h3>
+								<p><a href="tel:+447780186491">+447780186491</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:samuelolowo360@gmail.com">samuelolowo360@gmail.com</a></p>
+							</section>
+							<!-- <section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section> -->
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<span>&copy; Samuel Olowo</span> 
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+
+		<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+		</script>
+
+	<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "98q6NFqk7-mAFw9gs",
+      });
+   })();
+</script>
+
+    <script>
+         // listen to the form submission
+      document.querySelector("#myForm").addEventListener("submit", function (event) {
+          event.preventDefault();
+           // send the email here
+        emailjs.sendForm("service_2kfmf2j", "template_zs8sfab", this).then(
+            (response) => {
+              console.log("SUCCESS!", response.status, response.text);
+              alert("SUCCESS! Message Sent");
+            document.querySelector("#myForm").reset();
+            },
+            (error) => {
+              console.log("FAILED...", error);
+              alert("Message Not Sent! Please, call or email me directly.", error);
+            }
+          );
+        });
+    </script>
+	</body>
+</html>

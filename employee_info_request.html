@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<html>
+	<head>
+		<title>Employee Info Request</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="./assets/css/portfolio.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+		<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+		<script>hljs.highlightAll();</script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a class="logo">Employee Info Request</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">Projects</a></li>
+							<li class="active"><a >Employee Info Request</a></li>
+							<li><a href="#footer">Contact</a></li>
+						</ul>
+						<!-- <ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul> -->
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<!-- <span class="date">April 25, 2017</span> -->
+									<h1>Querying Employee's Database</h1>
+									<p>SQL Queries to Populate Details on Employee Information From the <br> Company's Employee Database to Answer Questions</p>
+								</header>
+								<!-- <div class="image main"><img src="images/employee_info_dataset.png" alt="" /></div> -->
+								<iframe src="./sql_employee_Info.html" width="100%" height="500px" style="border:none;"></iframe>
+								<p><em style="color: #8b949e;">Note: You can scroll through my SQL code above or view it on my Github via the link below.</em></p>
+								<hr>
+								<p><strong>SQL Code:</strong> <span><a href="https://github.com/donboab/samuel.portfolio/blob/main/assets/projects/emplyee_info.sql" target="_blank" rel="noopener noreferrer">Employee Info SQL Code</a></span></p>
+								<h3>SQL Skills Used:</h3>
+								<p>
+									<ul>
+										<li><strong> Data Retrieval & Filtering:</strong> SELECT, WHERE, IN, NOT IN, BETWEEN, LIKE.</li>
+										<li><strong>String Manipulation:</strong> UPPER(), CONCAT(), SUBSTRING(), CHARINDEX(), LTRIM(), RTRIM(), COALESCE().
+										</li>
+										<li><strong>Date Handling:</strong> GETDATE(), CONVERT(), YEAR(), MONTH(), DAY(), DATEPART().
+										</li>
+										<li><strong>Aggregations & Grouping:</strong> COUNT(), GROUP BY, ORDER BY, HAVING.
+										</li>
+										<li><strong>Join Operations:</strong> INNER JOIN, RIGHT JOIN (to combine employee info with salary/position data).
+										</li>
+										<li><strong>Window Functions:</strong> RANK() OVER (ORDER BY ...) for top N salary rankings.
+										</li>
+										<li><strong>CTEs (Common Table Expressions):</strong>Used for intermediate logic and readable subqueries. 
+										</li>
+										<li><strong>Table Creation:</strong> SELECT INTO for creating new tables from existing datasets.
+										</li>
+										<li><strong>Result Set Union:</strong> UNION ALL to combine top and bottom salary data.
+										</li>
+										<li><strong>Alias Usage:</strong> Clear column and table aliasing for improved readability
+										</li>
+										<li><strong>Data Validation & Cleaning:</strong> Ensuring correct data types and consistent formatting for reliable analysis (implicit skill in query design)
+										</li>
+									</ul>
+								</p>
+								<h3>Project Description</h3>
+								<p>This project demonstrates the use of structured query language (SQL) to analyze and extract actionable insights from a relational database containing employee records. The objective was to apply real-world SQL techniques to solve common business and HR-related queries, including workforce segmentation, salary analysis, and data transformation. The analytical focus areas are:
+									<p><strong>Data Structure & Tables:</strong></p>
+									<p>The analysis was based on two relational tables; (Employee_Info and Employee_Position). These tables contains employee demographic details, departmental affiliations, job roles, compensation data etc.</p>
+									<p><strong>Query Objective Areas:</strong></p>
+									
+									<ul>
+										<li>Data formatting and transformation (e.g., name casing, string parsing).
+										</li>
+										<li>Filtering and pattern matching (e.g., employees with names starting or ending with specific letters).</li>
+										<li>Date manipulation and temporal analysis (e.g., filtering by date of birth or date of joining).
+										</li>
+										<li>Aggregation and grouping (e.g., department-wise employee count, gender-based segmentation).
+										</li>
+										<li>Salary and financial insights (e.g., range filters, top earners, min/max salary brackets).
+										</li>
+										<li>Table creation and joins for enriched analysis across tables.
+										</li>
+									</ul>
+									
+									<h3>Impact of the Project</h3>
+									<ul>
+										<li>Developed over 20 reusable SQL queries to support workforce and salary analysis.</li>
+										<li>Simulated real HR data tasks like employee segmentation, compensation analysis, and department summaries.</li>
+										<li>Delivered insights that can inform staffing decisions, compensation reviews, and talent analytics.
+										</li>
+									</ul>
+								</p>
+								<h3>Technology used:</h3>
+								 <p>SQL Server Management Studio (SSMS) for querying and analysis</p>
+								 <p>T-SQL (Transact-SQL)</p>
+								
+								<p><strong>View SQL File:</strong><a href="https://github.com/donboab/samuel.portfolio/blob/main/assets/projects/emplyee_info.sql" target="_blank" rel="noopener noreferrer"> Click to View Queries</a></p>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#" id="myForm">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" required />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" required/>
+									</div>
+									<div class="form-group field">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" name="subject"
+                                          class="form-control"
+                                          id="subject"
+                                          required />
+                                    </div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3" required></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li class="contact-btn"><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<!-- <section class="alt">
+								<h3>Address</h3>
+								<p>Dundee, Scotland<br />
+								United Kingdom</p>
+							</section> -->
+							<section>
+								<h3>Phone</h3>
+								<p><a href="tel:+447780186491">+447780186491</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="mailto:samuelolowo360@gmail.com">samuelolowo360@gmail.com</a></p>
+							</section>
+							<!-- <section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section> -->
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<span>&copy; Samuel Olowo</span> 
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			
+
+		<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+		</script>
+
+	<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "98q6NFqk7-mAFw9gs",
+      });
+   })();
+</script>
+
+    <script>
+         // listen to the form submission
+      document.querySelector("#myForm").addEventListener("submit", function (event) {
+          event.preventDefault();
+           // send the email here
+        emailjs.sendForm("service_2kfmf2j", "template_zs8sfab", this).then(
+            (response) => {
+              console.log("SUCCESS!", response.status, response.text);
+              alert("SUCCESS! Message Sent");
+            document.querySelector("#myForm").reset();
+            },
+            (error) => {
+              console.log("FAILED...", error);
+              alert("Message Not Sent! Please, call or email me directly.", error);
+            }
+          );
+        });
+    </script>
+	</body>
+</html>

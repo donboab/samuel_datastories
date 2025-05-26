@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<html>
+	<head>
+		<title>Samuel Olowo</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/portfolio.css">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+	</head>
+	<body class="is-preload">
+		<pre><code class="language-sql">
+	--1	How many incidents occurred at each plant?
+		SELECT	Plant,
+				COUNT([Incident Type]) AS Total_incident
+		FROM Workplace_Safety_Data
+		GROUP BY Plant;
+	
+	--2	What is the total incident cost per department?
+
+
+		SELECT	Department,
+				SUM([Incident cost]) AS Incident_Cost
+		FROM	Workplace_Safety_Data
+		GROUP BY Department
+
+	
+	--3	Which incident type resulted in the highest total days lost?
+
+		SELECT TOP (1)	[Incident Type],
+				SUM([Days lost]) AS Days_lost
+		FROM Workplace_Safety_Data
+		GROUP BY [Incident Type]
+		ORDER BY Days_lost DESC;
+	
+	--4	What is the distribution of incident types by shift?
+
+		SELECT	[Incident Type],
+				Shift,
+				COUNT(*) AS Inc_Distribution
+		FROM Workplace_Safety_Data
+		GROUP BY [Incident Type], Shift
+		ORDER BY [Incident Type], Shift;
+
+	
+	--5	What is the average incident cost for each injury location?
+
+		SELECT	[Injury Location],
+				ROUND(AVG([Incident Cost]),2) AS Avg_Cost
+		FROM Workplace_Safety_Data
+		GROUP BY [Injury Location]
+		ORDER BY Avg_cost DESC;
+	
+	--6	Which age group has the highest number of incidents?
+
+		SELECT	TOP (1) [Age Group],
+				COUNT(*) AS N_Incidents
+		FROM Workplace_Safety_Data
+		GROUP BY [Age Group]
+		ORDER BY N_Incidents DESC;
+	
+	--7	How many incidents were reported as 'Lost Time' by each plant?
+
+		SELECT	Plant,
+				COUNT([Report Type]) As n_lostTime
+		FROM Workplace_Safety_Data
+		WHERE [Report Type] = 'Lost Time'
+		GROUP BY Plant;
+
+	
+	--8	Which department had the highest number of 'Crush & Pinch' incidents?
+
+		SELECT TOP (1)	Department,
+				COUNT(*) AS Total_CP
+		FROM Workplace_Safety_Data
+		WHERE [Incident Type] = 'Crush & Pinch'
+		GROUP BY Department
+		ORDER BY Total_CP DESC;
+	
+	--9	Which plants reported the most "Near Miss" incidents?
+
+		SELECT	TOP (5) Plant,
+				COUNT(*) AS n_NearMiss
+		FROM Workplace_Safety_Data
+		WHERE [Report Type] = 'Near Miss'
+		GROUP BY Plant
+		ORDER BY n_NearMiss DESC;
+	
+	--10	What is the total number of incidents by year and month?
+
+		SELECT	YEAR([Date]) AS Year,
+				MONTH([Date]) AS Month,
+				COUNT(*) AS n_Incidents
+		FROM Workplace_Safety_Data
+		GROUP BY YEAR([Date]), MONTH([Date])
+		ORDER BY Year DESC, Month ASC, n_Incidents;
+	
+	--11	Which gender has the most reported incidents?
+
+		SELECT TOP 1	Gender,
+				COUNT([Report Type]) AS Report_Count
+		FROM Workplace_Safety_Data
+		GROUP BY Gender
+		ORDER BY Report_Count DESC;
+
+	
+	--12	What is the total cost of incidents per year?
+
+		SELECT	YEAR([Date]) AS Year,
+				SUM([Incident Cost]) AS Total_incident_Cost
+		FROM Workplace_Safety_Data
+		GROUP BY Year([Date])
+		ORDER BY Year;
+
+	
+	--13	Which incident resulted in the highest cost?
+
+		SELECT TOP (1)	[Incident Type],
+				SUM([Incident Cost]) Total_cost
+		FROM Workplace_Safety_Data
+		GROUP BY [Incident Type]
+		ORDER BY [Incident Type] DESC;
+	
+	--14	What is the total cost of incidents for each report type?
+
+		SELECT	[Report Type],
+				SUM([Incident Cost]) AS Total_Cost
+		FROM Workplace_Safety_Data
+		GROUP BY [Report Type]
+		ORDER BY Total_Cost DESC;
+	
+	--15	Which departments had incidents with more than 2 days lost?
+
+		SELECT 
+			Department,
+			COUNT(*) AS Incident_Count,
+			SUM([Days Lost]) AS Total_Days_Lost
+		FROM Workplace_Safety_Data
+		WHERE [Days Lost] > 2
+		GROUP BY Department
+		ORDER BY Incident_Count DESC;
+	
+	--16	What is the average number of days lost per incident type?
+
+		SELECT	[Incident Type],
+				ROUND(AVG([Days Lost]), 1) AS Average_Days_lost
+		FROM Workplace_Safety_Data
+		GROUP BY [Incident Type]
+		ORDER BY Average_Days_lost DESC;
+	
+	--17	What is the distribution of incidents by shift (Day, Afternoon, Night)?
+
+		SELECT	Shift,
+				COUNT(*) AS Incident_by_Shift
+		FROM Workplace_Safety_Data
+		WHERE Shift IN ('Day', 'Afternoon', 'Night')
+		GROUP BY Shift
+		ORDER BY Incident_by_Shift DESC;
+	
+	--18	Which months have the highest number of incidents?
+
+		WITH CTE AS (
+			SELECT 
+				FORMAT([Date], 'MMMM') AS Incident_Month
+			FROM Workplace_Safety_Data
+		)
+		SELECT TOP (1) 
+			Incident_Month,
+			COUNT(*) AS Number_of_Incident
+		FROM CTE
+		GROUP BY Incident_Month
+		ORDER BY Number_of_Incident DESC;
+
+	
+	--19	What is the total cost of "Vehicle" related incidents?
+
+		SELECT	[Incident Type],
+				SUM([Incident Cost]) Total_Vehicle_Cost
+		FROM Workplace_Safety_Data
+		WHERE [Incident Type] = 'Vehicle'
+		GROUP BY [Incident Type];
+
+	
+	--20	Which age group is most affected by "Falling Object" incidents?
+
+		SELECT TOP (1)	[Age Group],
+				COUNT([Incident Type]) AS 'Falling_Object_Incident'
+		FROM Workplace_Safety_Data
+		WHERE [Incident Type] = 'Falling Object'
+		GROUP BY [Age Group]
+		ORDER BY Falling_Object_Incident DESC;
+
+
+	</code></pre>
+
+	</body>
+</html>
