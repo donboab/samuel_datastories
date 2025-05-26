@@ -1,0 +1,214 @@
+--1	Write a query to fetch the EmpFname from the EmployeeInfo table
+--in the upper case and use the ALIAS name as EmpName.
+
+SELECT UPPER(EmpFname) AS EmpName
+FROM Employee_info;
+
+--2	Write a query to fetch the number of employees working in the 
+--department ‘HR’.
+
+SELECT COUNT(Department) AS [Total HR_Department]
+FROM Employee_info
+WHERE Department = 'HR';
+
+--3	Write a query to get the current date.
+
+SELECT CONVERT(DATE, GETDATE()) AS [Current Date];
+
+--OR
+SELECT YEAR(GETDATE()); 
+SELECT DATEPART(YY, GETDATE()); -- To get only current year
+SELECT MONTH(GETDATE()); -- To get only the current month
+SELECT DAY(GETDATE()); -- To get only the current day
+
+--4	Write a query to retrieve the first four characters of  EmpLname 
+--from the EmployeeInfo table.
+
+SELECT SUBSTRING(EmpLname, 1, 4) AS First_4_Characters
+FROM Employee_Info;
+
+--5	Write a query to fetch only the place name(string before brackets) 
+--from the Address column of EmployeeInfo table.
+
+SELECT SUBSTRING(Address, 1, CHARINDEX('(', Address)-1) AS Place_name
+FROM Employee_Info;
+
+-- To Mask other info in the parenthensis
+SELECT	CONCAT(SUBSTRING(Address, 1, CHARINDEX('(', Address)-1), '******') 
+		AS Place_name_Masked
+FROM Employee_Info;
+
+--6	Write a query to create a new table that consists of data and 
+--structure copied from the other table.
+
+SELECT *
+INTO new_employeeTable
+FROM Employee_Info;
+
+--7	Write q query to find all the employees whose salary is between 
+--50000 to 100000.
+
+SELECT	I.EmpID,
+		CONCAT(I.EmpFname, ' ', I.EmpLname) AS Full_name,
+		P.Salary
+FROM Employee_Info AS I
+JOIN Employee_position AS P
+		ON I.EmpID = P.EmpID
+WHERE P.Salary BETWEEN 50000 AND 100000;
+
+
+--8	Write a query to find the names of employees that begin with ‘S’
+
+WITH cte AS
+(SELECT CONCAT(EmpFname, ' ', EmpLname) AS Full_name
+FROM Employee_Info)
+SELECT Full_name
+FROM cte
+WHERE Full_name like 'S%';
+
+-- or without cte:
+SELECT CONCAT(EmpFname, ' ', EmpLname) AS Full_name
+FROM Employee_Info
+WHERE EmpFname like 'S%';
+
+--9	Write a query to fetch top N records salary.
+
+SELECT TOP (2) Salary AS Salary_in_list
+FROM Employee_position
+
+-- if it is top 2 earner
+WITH CTE AS
+			(SELECT	i.EmpFname,
+					i.EmpLname,
+					p.Salary,
+			RANK() OVER(ORDER BY p.Salary DESC) AS Top_earner
+			FROM Employee_position p
+			RIGHT JOIN Employee_Info i
+			ON p.EmpID = i.EmpID)
+SELECT	EmpFname,
+		EmpLname,
+		Salary AS Top3_earner
+FROM CTE
+WHERE Top_earner <=2
+
+--10	Write a query to retrieve the EmpFname and EmpLname in a single column 
+--as “FullName”. The first name and the last name must be separated with space.
+
+SELECT	CONCAT(EmpFname, ' ', EmpLname) AS FullName
+FROM Employee_Info;
+
+-- incase there is data quality issue
+SELECT 
+    LTRIM(RTRIM(
+        COALESCE(EmpFname, '') + ' ' + COALESCE(EmpLname, '')
+    )) AS FullName
+FROM Employee_Info;
+
+--SELECT CONCAT_WS(' ', EmpFname, EmpLname) AS FullName
+--FROM Employee_Info;
+
+	
+--11	Write a query find number of employees whose DOB is between 
+--02/05/1970 to 31/12/1995 and are grouped according to gender
+
+SELECT	Gender, 
+		COUNT(*) AS Number_of_Employees
+FROM	Employee_Info
+WHERE	DOB BETWEEN '1970-05-02' AND '1995-12-31'
+GROUP BY Gender;
+
+
+--12	Write a query to fetch all the records from the EmployeeInfo 
+--table ordered by EmpLname in descending order and Department in the 
+--ascending order.
+
+SELECT *
+FROM Employee_Info
+ORDER BY EmpLname DESC, Department ASC;
+
+--13	Write a query to fetch details of employees whose EmpLname ends
+--with an alphabet ‘A’ and contains five alphabets.
+
+SELECT	EmpFname,
+		EmpLname
+FROM Employee_Info
+WHERE EmpLname LIKE '____A';
+
+--14	Write a query to fetch details of all employees excluding the 
+--employees with first names, “Sanjay” and “Sonia” from the EmployeeInfo table.
+
+SELECT EmpFname,
+		EmpLname
+FROM Employee_Info
+WHERE EmpFname NOT IN ('Sanjay', 'Sonia');
+
+--15	Write a query to fetch details of employees with the address as 
+--“DELHI(DEL)”
+
+SELECT *
+FROM Employee_Info
+WHERE Address = 'DELHI(DEL)';
+
+--16	Write a query to fetch all employees who also hold the managerial 
+--position.
+
+SELECT	i.EmpID,
+		i.EmpFname,
+		i.EmpLname,
+		i.Project,
+		p.EmpPosition
+FROM Employee_Info AS i
+JOIN Employee_position AS p
+		ON i.EmpID = p.EmpID
+WHERE EmpPosition = 'Manager';
+
+--17	Write a query to fetch the department-wise count of employees 
+--sorted by department’s count in ascending order
+
+SELECT Department,
+		COUNT(*) AS Emp_Total
+FROM Employee_Info
+GROUP BY Department
+ORDER BY Emp_Total ASC;
+
+--18	Write a query to fecth Male employees in HR department
+
+SELECT *
+FROM Employee_Info
+WHERE Department = 'HR' AND Gender = 'M';
+
+--19	Write a SQL query to retrieve employee details from EmployeeInfo 
+--table who have a date of joining in the EmployeePosition table
+
+SELECT	i.EmpFname,
+		i.EmpLname,
+		i.Department,
+		p.DateOfJoining
+FROM Employee_Info AS i
+JOIN Employee_position AS p
+	ON i.EmpID = p.EmpID
+WHERE p.DateOfJoining IS NOT NULL;
+
+--20	Write a query to retrieve two minimum and maximum salaries from the 
+--EmployeePosition table
+
+WITH Minimum_Sal AS
+				(SELECT TOP (2) EmpID,
+				EmpPosition,
+				Salary,
+				'Mini_Salary' AS Salary_Group
+				FROM Employee_position
+				ORDER BY Salary ASC),
+
+Maximum_Sal AS (SELECT TOP (2)	EmpID,
+				EmpPosition,
+				Salary,
+				'Maxi_Salary' AS Salary_Group
+				FROM Employee_position
+				ORDER BY Salary DESC)
+SELECT *
+FROM Minimum_Sal
+UNION ALL
+SELECT *
+FROM Maximum_Sal;
+

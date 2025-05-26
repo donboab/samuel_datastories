@@ -1,0 +1,49 @@
+:root{
+    --pri: #fffffff2;
+    --mobilepri: #ffffff;
+    --pshad: #f4f4f6;
+    --sec: #fac451;
+    --sectran: #fac45120;
+    --bg: #e0e0e6;
+    --shad: 0 3px 8px 0 #0f0f1433;
+    --litshad: 0 1px 4px 0 #0f0f141a;
+    --blacktxt: #1e1e28;
+    --txt: #868686;
+    --wht: #cacace;
+    --dark: #323042;
+    --curtain: #1e1e2895;
+}
+
+.skill-logo{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+    transition: all .5s ease-in-out;
+    scroll-behavior:smooth;
+}
+.skill-logo img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+.skill-logo p{
+    width: 80px;
+    height: 80px;
+}
+/* .skill-logo > p:hover{
+    width: 50px;
+    height: 50px;
+    background: var(--sec) ;
+    border-radius: 50%;
+    margin: 12px;
+} */
+
+.rounded-circle {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
